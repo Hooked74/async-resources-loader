@@ -12,7 +12,7 @@ module.exports = function(content) {
   var options = loaderUtils.getOptions(this) || {};
   validateOptions(require("./options"), options, "Async Resources Loader");
 
-  var mimetype = mime.lookup(this.resourcePath);
+  var mimetype = mime.getType(this.resourcePath);
   var limit = options.limit || (this.options && this.options.url && this.options.url.dataUrlLimit);
   var isJSON = mimetype === "application/json";
   var isSVG = mimetype === "image/svg+xml";
