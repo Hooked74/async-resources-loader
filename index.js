@@ -10,7 +10,7 @@ module.exports = function(content) {
   this.cacheable && this.cacheable();
 
   var options = loaderUtils.getOptions(this) || {};
-  validateOptions(require("./options"), options, "URL Loader");
+  validateOptions(require("./options"), options, "Async Resources Loader");
 
   var mimetype = mime.lookup(this.resourcePath);
   var limit = options.limit || (this.options && this.options.url && this.options.url.dataUrlLimit);
